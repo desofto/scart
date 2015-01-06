@@ -1,5 +1,9 @@
 class Cart < ActiveRecord::Base
   belongs_to :product
+  validates :product, presence: true
+  validates :count, presence: true
+
+  default_scope -> { joins(:product).order('products.name ASC') }
 
   def Cart.find( product_id = nil )
     return where( session_id: $session ) if product_id.nil?
