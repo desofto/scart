@@ -47,9 +47,9 @@ class CartController < ApplicationController
 
   private
     def generate_session
-      @session = cookies.permanent[ :session ]
-      return unless @session.nil? || @session.empty?
+      $session = cookies.permanent[ :session ]
+      return unless $session.nil? || $session.empty?
       require 'securerandom'
-      cookies.permanent[ :session ] = @session = SecureRandom.hex
+      cookies.permanent[ :session ] = $session = SecureRandom.hex
     end
 end
