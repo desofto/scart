@@ -1,0 +1,9 @@
+<div class="row" style="margin-bottom: 12px;">
+  <% tag = Tag.new( name: "All" ) %>
+  <%= render 'tags/tag', tag: tag %>
+  <%= render @tags %>
+</div>
+
+<div class="row">
+  <%= render @products %>
+</div>

@@ -1,0 +1,10 @@
+<% if !@cart.empty? %>
+  <%= render @cart %>
+  <%= link_to 'Clear', '/cart/clear' %>
+  <br>
+  Sub-total: <%= @subTotal %>
+  <br>
+  Total: <%= @total %>
+<% else %>
+  The cart is empty
+<% end %>

@@ -1,0 +1,3 @@
+<% classes = %w( tag ) %>
+<% classes.push('active') if ( @tag.nil? && tag.id.nil? ) || ( !@tag.nil? && tag.id == @tag.id ) %>
+<%= link_to tag.name, "/cart/index?tag=" + tag.id.to_s, class: classes.join(' ') %>
